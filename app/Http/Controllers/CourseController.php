@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        Course::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'instructor_id' => $request->instructor_id,
-            'category_id' => $request->category_id,
-            'active' => $request->has('active') ? 1 : 0,
-        ]);
+        //dd($request);
+
+        $validated = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'instructor_id' => 'required|integer',
+            'category_id' => 'required|integer',
+            'active' => 'required|boolean'  
+    ]);
+
+
+        Course::create($validated);
 
         return redirect('/courseadd')->with('succes', 'posted succesfully');
     }
