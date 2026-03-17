@@ -18,6 +18,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link {{ Request::path() === '/' ? 'active' : '' }}" href="/">Home</a>
       <a class="nav-item nav-link {{ Request::path() === 'courseadd' ? 'active' : '' }}" href="/courseadd">Form</a>
+      <a class="nav-item nav-link {{ Request::path() === 'about' ? 'active' : '' }}" href="/about">About</a>
     </div>
     <span class="small text-muted">current path: {{Request::path()}}</span>
   </div>
