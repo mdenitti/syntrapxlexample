@@ -17,8 +17,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link {{ Request::path() === '/' ? 'active' : '' }}" href="/">Home</a>
-      <a class="nav-item nav-link {{ Request::path() === '/courseadd' ? 'active' : '' }}" href="/courseadd">Form</a>
+      <a class="nav-item nav-link {{ Request::path() === 'courseadd' ? 'active' : '' }}" href="/courseadd">Form</a>
     </div>
+    <span class="small text-muted">current path: {{Request::path()}}</span>
   </div>
 </nav>
     </div>
