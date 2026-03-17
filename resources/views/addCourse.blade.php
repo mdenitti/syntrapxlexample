@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Course</title>
-</head>
-<body>
-    <h1>Add Course</h1>
+@extends('layout')
 
+@section ('title','Add a course to our system')
+
+@section('content')
     @if (session('succes'))
         <p>{{ session('succes') }}</p>
     @endif
@@ -27,30 +22,29 @@
 
         <div>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title">
+            <input class="form-control" type="text" id="title" name="title">
         </div>
 
         <div>
             <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea>
+            <textarea class="form-control" id="description" name="description"></textarea>
         </div>
 
         <div>
             <label for="instructor_id">Instructor ID</label>
-            <input type="number" id="instructor_id" name="instructor_id">
+            <input class="form-control" type="number" id="instructor_id" name="instructor_id">
         </div>
 
         <div>
             <label for="category_id">Category ID</label>
-            <input type="number" id="category_id" name="category_id">
+            <input class="form-control" type="number" id="category_id" name="category_id">
         </div>
 
         <div>
             <label for="active">Active</label>
-            <input type="checkbox" id="active" name="active" value="1">
+            <input class="form-check-input" type="checkbox" id="active" name="active" value="1">
         </div>
 
-        <button type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Save</button>
     </form>
-</body>
-</html>
+@endsection
