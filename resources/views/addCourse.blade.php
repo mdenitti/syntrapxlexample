@@ -1,7 +1,7 @@
-@extends('layout.layout')
+@extends('xlayout.layout')
 
 @section ('title','Add a course to our system')
-
+@section ('annual_earnings','MONEY MONEY MONEY')
 @section('content')
     @if (session('succes'))
         <p>{{ session('succes') }}</p>

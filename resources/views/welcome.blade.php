@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('xlayout.layout')
 
 @section ('title','Home')
 
